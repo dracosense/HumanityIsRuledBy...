@@ -1,0 +1,127 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/GameGUI.cs" type="Script" id=1]
+[ext_resource path="res://Sprites/Fonts/gui_font_small.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Sprites/Icons/coin.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Icons/science2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/UI/button_style.tres" type="StyleBox" id=5]
+
+[node name="GameGUI" type="HBoxContainer"]
+margin_right = 1600.0
+margin_bottom = 128.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftSpace" type="Control" parent="."]
+margin_right = 95.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MoneyLabel" type="Label" parent="."]
+margin_left = 99.0
+margin_right = 194.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.376471, 0.376471, 0.376471, 1 )
+custom_colors/font_outline_modulate = Color( 0.376471, 0.376471, 0.376471, 1 )
+custom_colors/font_color_shadow = Color( 0.376471, 0.376471, 0.376471, 1 )
+text = "10"
+align = 2
+valign = 1
+
+[node name="MiddleMoneySpace" type="Control" parent="."]
+margin_left = 198.0
+margin_right = 207.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="MoneyIcon" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.501961 )
+margin_left = 211.0
+margin_right = 339.0
+margin_bottom = 128.0
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiddleSpace" type="Control" parent="."]
+margin_left = 343.0
+margin_right = 1295.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="TechP" type="MarginContainer" parent="."]
+margin_left = 1299.0
+margin_right = 1499.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.1
+
+[node name="HBoxC" type="HBoxContainer" parent="TechP"]
+margin_right = 200.0
+margin_bottom = 128.0
+
+[node name="TechPLabel" type="Label" parent="TechP/HBoxC"]
+margin_right = 58.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.376471, 0.376471, 0.376471, 1 )
+custom_colors/font_outline_modulate = Color( 0.376471, 0.376471, 0.376471, 1 )
+custom_colors/font_color_shadow = Color( 0.376471, 0.376471, 0.376471, 1 )
+text = "10"
+align = 2
+valign = 1
+
+[node name="MiddleTechPSpace" type="Control" parent="TechP/HBoxC"]
+margin_left = 62.0
+margin_right = 67.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TechPIcon" type="TextureRect" parent="TechP/HBoxC"]
+modulate = Color( 1, 1, 1, 0.501961 )
+margin_left = 71.0
+margin_right = 199.0
+margin_bottom = 128.0
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TechP" type="Button" parent="TechP"]
+margin_right = 200.0
+margin_bottom = 128.0
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+
+[node name="RightSpace" type="Control" parent="."]
+margin_left = 1503.0
+margin_right = 1600.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+[connection signal="button_down" from="TechP/TechP" to="." method="_on_TechP_button_down"]
+[connection signal="button_up" from="TechP/TechP" to="." method="_on_TechP_button_up"]

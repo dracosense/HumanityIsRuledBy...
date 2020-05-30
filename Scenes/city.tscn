@@ -1,0 +1,251 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Sprites/City/city.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scripts/City.cs" type="Script" id=2]
+[ext_resource path="res://Sprites/Fonts/font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Sprites/Icons/person_neutral.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/UI/circle_bar.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/UI/circle_bar_dark.png" type="Texture" id=6]
+[ext_resource path="res://Shaders/bar.tres" type="Material" id=7]
+[ext_resource path="res://Sprites/city_light.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Fonts/font_big.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Sprites/UI/button_style.tres" type="StyleBox" id=10]
+[ext_resource path="res://Sprites/Icons/attack1.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Icons/shield1.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/a_range.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/way_target_tip.png" type="Texture" id=14]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 50.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 104.403
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 1.0
+
+[sub_resource type="CanvasItemMaterial" id=4]
+blend_mode = 1
+
+[node name="City" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="StaticBody" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape2D" parent="StaticBody"]
+position = Vector2( 0, -20 )
+shape = SubResource( 1 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -40 )
+shape = SubResource( 2 )
+
+[node name="ASprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.2, 1.2 )
+frames = ExtResource( 1 )
+animation = "0"
+playing = true
+offset = Vector2( 0, -40 )
+
+[node name="WayTargetTip" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0, 1, 0.952941, 0.501961 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 14 )
+offset = Vector2( 0, -1200 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -30.5
+margin_top = -45.0
+margin_right = 29.5
+margin_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 9 )
+text = "121"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bar" type="TextureProgress" parent="."]
+modulate = Color( 1, 1, 1, 0.376471 )
+material = ExtResource( 7 )
+margin_left = -128.0
+margin_top = -168.0
+margin_right = 128.0
+margin_bottom = 88.0
+step = 0.0
+value = 30.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 5 )
+fill_mode = 4
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="."]
+modulate = Color( 0.439216, 0.439216, 0.439216, 1 )
+margin_left = -24.0
+margin_top = -182.0
+margin_right = 24.0
+margin_bottom = -134.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack" type="TextureRect" parent="."]
+margin_left = -192.0
+margin_top = -34.0
+margin_right = -143.0
+margin_bottom = 15.0
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shield" type="TextureRect" parent="."]
+margin_left = 146.0
+margin_top = -38.0
+margin_right = 195.0
+margin_bottom = 11.0
+texture = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SIcons" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackLabel" type="Label" parent="SIcons"]
+modulate = Color( 0.627451, 0.627451, 0.627451, 1 )
+margin_left = -193.0
+margin_top = -104.0
+margin_right = -144.0
+margin_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 9 )
+text = "3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShieldLabel" type="Label" parent="SIcons"]
+modulate = Color( 0.627451, 0.627451, 0.627451, 1 )
+margin_left = 142.0
+margin_top = -110.0
+margin_right = 191.0
+margin_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 9 )
+text = "3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ARange" type="Area2D" parent="."]
+visible = false
+modulate = Color( 0, 1, 0.952941, 0.501961 )
+scale = Vector2( 800, 800 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="ARange"]
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="ARange"]
+scale = Vector2( 0.002, 0.002 )
+texture = ExtResource( 13 )
+
+[node name="Light" type="Light2D" parent="."]
+material = SubResource( 4 )
+position = Vector2( -4, -42 )
+enabled = false
+texture = ExtResource( 8 )
+texture_scale = 10.0
+range_z_min = -128
+range_z_max = 128
+
+[node name="LevelUpButton" type="Button" parent="."]
+margin_left = -26.0
+margin_top = -225.0
+margin_right = 24.0
+margin_bottom = -177.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 10 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = ExtResource( 10 )
+custom_styles/disabled = ExtResource( 10 )
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "
+1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackButton" type="Button" parent="."]
+margin_left = -201.0
+margin_top = -105.0
+margin_right = -132.0
+margin_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 10 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = ExtResource( 10 )
+custom_styles/disabled = ExtResource( 10 )
+custom_styles/normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShieldButton" type="Button" parent="."]
+margin_left = 137.0
+margin_top = -108.0
+margin_right = 206.0
+margin_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 10 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = ExtResource( 10 )
+custom_styles/disabled = ExtResource( 10 )
+custom_styles/normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="ARange" to="." method="_on_ARange_body_entered"]
+[connection signal="button_down" from="LevelUpButton" to="." method="_on_LevelUp_button_down"]
+[connection signal="button_down" from="AttackButton" to="." method="_on_Attack_button_down"]
+[connection signal="button_down" from="ShieldButton" to="." method="_on_Shield_button_down"]

@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Shaders/perlin_noise2.shader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/base_color = Color( 1, 1, 1, 1 )
+shader_param/time_c = Vector2( -0.01, 0 )
+shader_param/noise_const = 5.0
+shader_param/scale = 10.0
+shader_param/add = -0.5
+shader_param/add_texture = false
+shader_param/alpha_func = true
+shader_param/get_texture_alpha = null

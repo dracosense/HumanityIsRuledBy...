@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/game_gui.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/GameCamera.cs" type="Script" id=2]
+[ext_resource path="res://StarLight.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/Game.cs" type="Script" id=4]
+[ext_resource path="res://Scenes/menu_gui.tscn" type="PackedScene" id=8]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+smoothing_enabled = true
+script = ExtResource( 2 )
+
+[node name="MenuCamera" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="GameGUI" parent="CanvasLayer" instance=ExtResource( 1 )]
+margin_top = 698.0
+margin_bottom = 826.0
+
+[node name="MenuGUI" parent="CanvasLayer" instance=ExtResource( 8 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="LevelLayer" type="Node2D" parent="."]
+
+[node name="ObjLayer" type="Node2D" parent="."]

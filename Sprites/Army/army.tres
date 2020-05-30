@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/Icons/person_evil.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Icons/person.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Icons/person_neutral.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Icons/person_shadow.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Icons/person_friend.png" type="Texture" id=5]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "person",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "friend_person",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "neutral_person",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "evil_person",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "shadow_person",
+"speed": 5.0
+} ]

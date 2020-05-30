@@ -1,0 +1,5 @@
+E:\projects\Godot\GameForJam\.mono\temp\bin\Tools\GameForJam.dll
+E:\projects\Godot\GameForJam\.mono\temp\bin\Tools\GameForJam.pdb
+E:\projects\Godot\GameForJam\.mono\temp\obj\Tools\GameForJam.csprojAssemblyReference.cache
+E:\projects\Godot\GameForJam\.mono\temp\obj\Tools\GameForJam.dll
+E:\projects\Godot\GameForJam\.mono\temp\obj\Tools\GameForJam.pdb

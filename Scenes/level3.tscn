@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/city.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/background.tscn" type="PackedScene" id=2]
+
+[node name="Level3" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 2 )]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Background"]
+color = Color( 0.501961, 0.333333, 0.25098, 1 )
+
+[node name="0City" parent="." instance=ExtResource( 1 )]
+position = Vector2( -990.128, 1213.12 )
+
+[node name="City2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1199.92, 561.872 )
+
+[node name="City3" parent="." instance=ExtResource( 1 )]
+position = Vector2( -285.643, 1458.75 )
+
+[node name="City4" parent="." instance=ExtResource( 1 )]
+position = Vector2( -455.819, 532.146 )
+
+[node name="City5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 168.347, 906.481 )
+
+[node name="City6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 772.881, 1310.56 )
+
+[node name="NN1City7" parent="." instance=ExtResource( 1 )]
+position = Vector2( -346.786, -158.599 )
+
+[node name="NN1City8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 605.588, 363.911 )
+
+[node name="City9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 276.52, -493.157 )
+
+[node name="City10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1180.38, 711.196 )
+
+[node name="City11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1472.9, 67.3137 )
+
+[node name="City12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1014.27, -558.96 )
+
+[node name="City13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1464.64, 1330.86 )
+
+[node name="NN1City14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2060.79, 883.538 )
+
+[node name="2City15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1760.97, -525.019 )
+
+[node name="City16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2162.61, 46.323 )

@@ -1,0 +1,608 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Shaders/gui_bg.tres" type="Material" id=1]
+[ext_resource path="res://Sprites/background.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Fonts/gui_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Sprites/UI/button_style.tres" type="StyleBox" id=4]
+[ext_resource path="res://Scripts/UIButton.cs" type="Script" id=5]
+[ext_resource path="res://Scripts/MenuGUI.cs" type="Script" id=6]
+[ext_resource path="res://Sprites/Fonts/gui_font_big.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Scenes/level_button.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/UI/money_s.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/UI/knowledge_s.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/UI/shadow_government_s.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/UI/random_s.png" type="Texture" id=12]
+[ext_resource path="res://Shaders/gui_bg_back.tres" type="Material" id=13]
+[ext_resource path="res://Scripts/DifficultButton.cs" type="Script" id=14]
+[ext_resource path="res://Sprites/Fonts/gui_font_small.tres" type="DynamicFont" id=15]
+[ext_resource path="res://Sprites/Fonts/gui_font_very_small.tres" type="DynamicFont" id=16]
+[ext_resource path="res://Scripts/NetworkMenu.cs" type="Script" id=17]
+[ext_resource path="res://Sprites/UI/ambitions_s.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/UI/goodness_s.png" type="Texture" id=19]
+
+[node name="MenuGUI" type="Control"]
+margin_right = 1600.0
+margin_bottom = 900.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBackground" type="TextureRect" parent="."]
+material = ExtResource( 13 )
+margin_right = 1600.0
+margin_bottom = 900.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+material = ExtResource( 1 )
+margin_right = 1600.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartScreen" type="MarginContainer" parent="."]
+visible = false
+margin_right = 1600.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="StartScreen"]
+margin_right = 1600.0
+margin_bottom = 900.0
+color = Color( 1, 1, 1, 0.501961 )
+
+[node name="Menu" type="HBoxContainer" parent="StartScreen"]
+margin_right = 1600.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LeftSpace" type="Control" parent="StartScreen/Menu"]
+margin_right = 344.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="VBoxC" type="VBoxContainer" parent="StartScreen/Menu"]
+margin_left = 348.0
+margin_right = 1251.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.4
+
+[node name="TopSpace" type="Control" parent="StartScreen/Menu/VBoxC"]
+margin_right = 903.0
+margin_bottom = 77.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="StartScreen/Menu/VBoxC"]
+margin_top = 81.0
+margin_right = 903.0
+margin_bottom = 261.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Humanity is ruled by..."
+align = 1
+valign = 1
+
+[node name="MiddleSpace" type="Control" parent="StartScreen/Menu/VBoxC"]
+margin_top = 265.0
+margin_right = 903.0
+margin_bottom = 419.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="HBoxC" type="HBoxContainer" parent="StartScreen/Menu/VBoxC"]
+margin_top = 423.0
+margin_right = 903.0
+margin_bottom = 663.0
+
+[node name="LeftSpace" type="Control" parent="StartScreen/Menu/VBoxC/HBoxC"]
+margin_right = 223.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="1" type="Button" parent="StartScreen/Menu/VBoxC/HBoxC"]
+margin_left = 227.0
+margin_right = 674.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Play"
+script = ExtResource( 5 )
+
+[node name="RightSpace" type="Control" parent="StartScreen/Menu/VBoxC/HBoxC"]
+margin_left = 678.0
+margin_right = 903.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BottomSpace" type="Control" parent="StartScreen/Menu/VBoxC"]
+margin_top = 667.0
+margin_right = 903.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="RightSpace" type="Control" parent="StartScreen/Menu"]
+margin_left = 1255.0
+margin_right = 1600.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="LevelsScreen" type="Control" parent="."]
+visible = false
+margin_right = 1600.0
+margin_bottom = 900.0
+
+[node name="Menu" type="HBoxContainer" parent="LevelsScreen"]
+margin_right = 1600.0
+margin_bottom = 900.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftSpace" type="Control" parent="LevelsScreen/Menu"]
+margin_right = 132.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxC" type="VBoxContainer" parent="LevelsScreen/Menu"]
+margin_left = 136.0
+margin_right = 1462.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="TopSpace" type="Control" parent="LevelsScreen/Menu/VBoxC"]
+margin_right = 1326.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Label" type="Label" parent="LevelsScreen/Menu/VBoxC"]
+margin_top = 4.0
+margin_right = 1326.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Humanity is ruled by..."
+align = 1
+valign = 1
+
+[node name="MiddleSpace" type="Control" parent="LevelsScreen/Menu/VBoxC"]
+margin_top = 188.0
+margin_right = 1326.0
+margin_bottom = 238.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxC" type="HBoxContainer" parent="LevelsScreen/Menu/VBoxC"]
+margin_top = 242.0
+margin_right = 1326.0
+margin_bottom = 542.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+
+[node name="0" parent="LevelsScreen/Menu/VBoxC/HBoxC" instance=ExtResource( 8 )]
+margin_right = 375.0
+margin_bottom = 300.0
+
+[node name="Image" parent="LevelsScreen/Menu/VBoxC/HBoxC/0" index="0"]
+margin_right = 375.0
+margin_bottom = 148.0
+texture = ExtResource( 9 )
+stretch_mode = 6
+
+[node name="Button" parent="LevelsScreen/Menu/VBoxC/HBoxC/0" index="1"]
+margin_top = 152.0
+margin_right = 375.0
+margin_bottom = 300.0
+text = "Money"
+
+[node name="2" parent="LevelsScreen/Menu/VBoxC/HBoxC" instance=ExtResource( 8 )]
+margin_left = 379.0
+margin_right = 754.0
+margin_bottom = 300.0
+
+[node name="Image" parent="LevelsScreen/Menu/VBoxC/HBoxC/2" index="0"]
+margin_right = 375.0
+margin_bottom = 148.0
+texture = ExtResource( 19 )
+stretch_mode = 4
+
+[node name="Button" parent="LevelsScreen/Menu/VBoxC/HBoxC/2" index="1"]
+margin_top = 152.0
+margin_right = 375.0
+margin_bottom = 300.0
+text = "Goodness"
+
+[node name="4" parent="LevelsScreen/Menu/VBoxC/HBoxC" instance=ExtResource( 8 )]
+margin_left = 758.0
+margin_right = 1133.0
+margin_bottom = 300.0
+
+[node name="Image" parent="LevelsScreen/Menu/VBoxC/HBoxC/4" index="0"]
+margin_right = 375.0
+margin_bottom = 148.0
+texture = ExtResource( 12 )
+stretch_mode = 4
+
+[node name="Button" parent="LevelsScreen/Menu/VBoxC/HBoxC/4" index="1"]
+margin_top = 152.0
+margin_right = 375.0
+margin_bottom = 300.0
+text = "Random"
+
+[node name="RightSpace" type="Control" parent="LevelsScreen/Menu/VBoxC/HBoxC"]
+margin_left = 1137.0
+margin_right = 1326.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="HBoxC2" type="HBoxContainer" parent="LevelsScreen/Menu/VBoxC"]
+margin_top = 546.0
+margin_right = 1326.0
+margin_bottom = 846.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+
+[node name="LeftSpace" type="Control" parent="LevelsScreen/Menu/VBoxC/HBoxC2"]
+margin_right = 182.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="1" parent="LevelsScreen/Menu/VBoxC/HBoxC2" instance=ExtResource( 8 )]
+margin_left = 186.0
+margin_right = 551.0
+margin_bottom = 300.0
+
+[node name="Image" parent="LevelsScreen/Menu/VBoxC/HBoxC2/1" index="0"]
+margin_right = 365.0
+margin_bottom = 148.0
+texture = ExtResource( 10 )
+stretch_mode = 4
+
+[node name="Button" parent="LevelsScreen/Menu/VBoxC/HBoxC2/1" index="1"]
+margin_top = 152.0
+margin_right = 365.0
+margin_bottom = 300.0
+text = "Curiosity"
+
+[node name="3" parent="LevelsScreen/Menu/VBoxC/HBoxC2" instance=ExtResource( 8 )]
+margin_left = 555.0
+margin_right = 920.0
+margin_bottom = 300.0
+
+[node name="Image" parent="LevelsScreen/Menu/VBoxC/HBoxC2/3" index="0"]
+margin_right = 365.0
+margin_bottom = 148.0
+texture = ExtResource( 18 )
+stretch_mode = 4
+
+[node name="Button" parent="LevelsScreen/Menu/VBoxC/HBoxC2/3" index="1"]
+margin_top = 152.0
+margin_right = 365.0
+margin_bottom = 300.0
+text = "Ambitions"
+
+[node name="5" parent="LevelsScreen/Menu/VBoxC/HBoxC2" instance=ExtResource( 8 )]
+margin_left = 924.0
+margin_right = 1325.0
+margin_bottom = 300.0
+
+[node name="Image" parent="LevelsScreen/Menu/VBoxC/HBoxC2/5" index="0"]
+margin_right = 401.0
+margin_bottom = 148.0
+texture = ExtResource( 11 )
+stretch_mode = 4
+
+[node name="Button" parent="LevelsScreen/Menu/VBoxC/HBoxC2/5" index="1"]
+margin_top = 152.0
+margin_right = 401.0
+margin_bottom = 300.0
+text = "Shadow Government"
+
+[node name="BottomSpace" type="Control" parent="LevelsScreen/Menu/VBoxC"]
+margin_top = 850.0
+margin_right = 1326.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RightSpace" type="Control" parent="LevelsScreen/Menu"]
+margin_left = 1466.0
+margin_right = 1600.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DifficultButton" type="Button" parent="LevelsScreen"]
+margin_left = 1244.0
+margin_top = 283.999
+margin_right = 1505.0
+margin_bottom = 411.999
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 15 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Normal"
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="Button" parent="LevelsScreen"]
+margin_left = 1172.0
+margin_right = 1566.0
+margin_bottom = 84.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 16 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Local network game"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NetworkScreen" type="Control" parent="."]
+visible = false
+margin_right = 1600.0
+margin_bottom = 900.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color" type="ColorRect" parent="NetworkScreen"]
+margin_right = 1600.0
+margin_bottom = 900.0
+color = Color( 0.268814, 0.829557, 0.871094, 0.501961 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screen" type="HBoxContainer" parent="NetworkScreen"]
+margin_right = 1600.0
+margin_bottom = 900.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftSpace" type="Control" parent="NetworkScreen/Screen"]
+margin_right = 383.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Menu" type="VBoxContainer" parent="NetworkScreen/Screen"]
+margin_left = 387.0
+margin_right = 1212.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+script = ExtResource( 17 )
+
+[node name="TopSpace" type="Control" parent="NetworkScreen/Screen/Menu"]
+margin_right = 825.0
+margin_bottom = 87.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Label" type="Label" parent="NetworkScreen/Screen/Menu"]
+margin_top = 91.0
+margin_right = 825.0
+margin_bottom = 271.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Network connection"
+align = 1
+valign = 1
+
+[node name="MiddleSpace" type="Control" parent="NetworkScreen/Screen/Menu"]
+margin_top = 275.0
+margin_right = 825.0
+margin_bottom = 362.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="CreateServerButton" type="Button" parent="NetworkScreen/Screen/Menu"]
+margin_top = 366.0
+margin_right = 825.0
+margin_bottom = 541.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 15 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 0 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Create server"
+
+[node name="Connect" type="HBoxContainer" parent="NetworkScreen/Screen/Menu"]
+margin_top = 545.0
+margin_right = 825.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="IP" type="LineEdit" parent="NetworkScreen/Screen/Menu/Connect"]
+margin_right = 410.0
+margin_bottom = 175.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/read_only = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 15 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+text = "127.0.0.1"
+align = 1
+
+[node name="ConnectButton" type="Button" parent="NetworkScreen/Screen/Menu/Connect"]
+margin_left = 414.0
+margin_right = 825.0
+margin_bottom = 175.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 15 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 0 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Connect"
+
+[node name="BottomSpace" type="Control" parent="NetworkScreen/Screen/Menu"]
+margin_top = 724.0
+margin_right = 825.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RightSpace" type="Control" parent="NetworkScreen/Screen"]
+margin_left = 1216.0
+margin_right = 1600.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="WinScreen" type="MarginContainer" parent="."]
+visible = false
+margin_right = 1600.0
+margin_bottom = 900.0
+
+[node name="Color" type="ColorRect" parent="WinScreen"]
+margin_right = 1600.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.454902, 1, 0, 0.752941 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="Button" parent="WinScreen"]
+margin_right = 1600.0
+margin_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "You win!"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="StartScreen/Menu/VBoxC/HBoxC/1" to="StartScreen/Menu/VBoxC/HBoxC/1" method="_on_button_down"]
+[connection signal="button_down" from="LevelsScreen/DifficultButton" to="LevelsScreen/DifficultButton" method="_on_button_down"]
+[connection signal="button_up" from="LevelsScreen/DifficultButton" to="LevelsScreen/DifficultButton" method="_on_button_up"]
+[connection signal="button_down" from="LevelsScreen/2" to="LevelsScreen/2" method="_on_button_down"]
+[connection signal="button_down" from="NetworkScreen/Screen/Menu/CreateServerButton" to="NetworkScreen/Screen/Menu" method="_on_CreateServerButton_down"]
+[connection signal="button_down" from="NetworkScreen/Screen/Menu/Connect/ConnectButton" to="NetworkScreen/Screen/Menu" method="_on_ConnectButton_down"]
+[connection signal="button_down" from="WinScreen/1" to="WinScreen/1" method="_on_button_down"]
+
+[editable path="LevelsScreen/Menu/VBoxC/HBoxC/0"]
+
+[editable path="LevelsScreen/Menu/VBoxC/HBoxC/2"]
+
+[editable path="LevelsScreen/Menu/VBoxC/HBoxC/4"]
+
+[editable path="LevelsScreen/Menu/VBoxC/HBoxC2/1"]
+
+[editable path="LevelsScreen/Menu/VBoxC/HBoxC2/3"]
+
+[editable path="LevelsScreen/Menu/VBoxC/HBoxC2/5"]

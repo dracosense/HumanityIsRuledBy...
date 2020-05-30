@@ -1,0 +1,109 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Shaders/perlin_noise2.shader" type="Shader" id=1]
+[ext_resource path="res://Scenes/background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/city.tscn" type="PackedScene" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/base_color = Color( 0.176471, 0.0745098, 0.0745098, 1 )
+shader_param/time_c = Vector2( 0, 0 )
+shader_param/noise_const = 1.167
+shader_param/scale = 30.0
+shader_param/add = 0.0
+shader_param/add_texture = false
+shader_param/alpha_func = false
+shader_param/get_texture_alpha = null
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/base_color = Color( 0.745098, 0.745098, 0.745098, 1 )
+shader_param/time_c = Vector2( 0, 0 )
+shader_param/noise_const = 5.198
+shader_param/scale = 30.0
+shader_param/add = -0.3
+shader_param/add_texture = false
+shader_param/alpha_func = true
+shader_param/get_texture_alpha = null
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 1 )
+shader_param/base_color = Color( 0, 1, 0.976471, 1 )
+shader_param/time_c = Vector2( 0.04, 0 )
+shader_param/noise_const = 10.0
+shader_param/scale = 2.0
+shader_param/add = 0.2
+shader_param/add_texture = false
+shader_param/alpha_func = true
+shader_param/get_texture_alpha = null
+
+[node name="Level6" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 2 )]
+
+[node name="Background" parent="Background/Back" index="0"]
+modulate = Color( 0, 0, 1, 1 )
+material = SubResource( 1 )
+
+[node name="Background" parent="Background/Middle" index="0"]
+modulate = Color( 0, 0, 1, 1 )
+material = SubResource( 2 )
+
+[node name="Background" parent="Background/Front" index="0"]
+material = SubResource( 3 )
+
+[node name="0City" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1152, -520 )
+
+[node name="2City2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2192, 448 )
+
+[node name="City3" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1284, 182.4 )
+
+[node name="City4" parent="." instance=ExtResource( 3 )]
+position = Vector2( -860, 718 )
+
+[node name="City5" parent="." instance=ExtResource( 3 )]
+position = Vector2( -484, -604 )
+
+[node name="NN1City6" parent="." instance=ExtResource( 3 )]
+position = Vector2( -156, 0 )
+
+[node name="City7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 444, -232 )
+
+[node name="NN1City8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2252, -168 )
+
+[node name="City9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1572, -336 )
+
+[node name="City10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1084, -144 )
+
+[node name="City11" parent="." instance=ExtResource( 3 )]
+position = Vector2( -332, 1240 )
+
+[node name="NN1City12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 308, 1120 )
+
+[node name="NN1City13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 916, 1328 )
+
+[node name="City14" parent="." instance=ExtResource( 3 )]
+position = Vector2( 764, 688 )
+
+[node name="City15" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1540, 1352 )
+
+[node name="City16" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2148, 1616 )
+
+[node name="City17" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2548, 1024 )
+
+[node name="NN2City18" parent="." instance=ExtResource( 3 )]
+position = Vector2( 484, 1744 )
+
+[editable path="Background"]

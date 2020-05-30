@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Shaders/fg_level.tres" type="Material" id=1]
+[ext_resource path="res://Sprites/background.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/city.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/background.tscn" type="PackedScene" id=4]
+
+[node name="Level7" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 4 )]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Background"]
+color = Color( 0, 0.360784, 0.380392, 1 )
+
+[node name="0City" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1856, -225 )
+
+[node name="0City2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -886.499, -450 )
+
+[node name="2City3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2320, 1407 )
+
+[node name="2City4" parent="." instance=ExtResource( 3 )]
+position = Vector2( -865.999, 1455 )
+
+[node name="NN1City5" parent="." instance=ExtResource( 3 )]
+position = Vector2( -441.999, 535 )
+
+[node name="NN1City6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2885.99, 310 )
+
+[node name="NN2City7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1190, 1011 )
+
+[node name="City8" parent="." instance=ExtResource( 3 )]
+position = Vector2( -250.999, 1182 )
+
+[node name="City9" parent="." instance=ExtResource( 3 )]
+position = Vector2( -235.999, -185 )
+
+[node name="City10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 414.001, 82.9985 )
+
+[node name="City11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 620.001, 1435 )
+
+[node name="NN1City12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 286.001, 786 )
+
+[node name="City13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1396, 353 )
+
+[node name="City14" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1724, 1543 )
+
+[node name="City15" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2526, -225 )
+
+[node name="City16" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2684.99, 973 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.941176 )
+material = ExtResource( 1 )
+position = Vector2( -1600, -900 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+centered = false

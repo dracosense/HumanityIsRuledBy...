@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/Army/army.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scripts/Army.cs" type="Script" id=2]
+[ext_resource path="res://Sprites/Fonts/font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Sprites/city_light.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 24.0
+
+[node name="Army" type="KinematicBody2D"]
+visible = false
+collision_layer = 0
+script = ExtResource( 2 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -21.0
+margin_top = -20.0
+margin_right = 19.0
+margin_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 3 )
+text = "127"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ASprite" type="AnimatedSprite" parent="."]
+modulate = Color( 0.62689, 0.62689, 0.62689, 0.627451 )
+scale = Vector2( 0.4, 0.4 )
+frames = ExtResource( 1 )
+animation = "friend_person"
+offset = Vector2( 0, -10 )
+
+[node name="Light2D" type="Light2D" parent="."]
+enabled = false
+texture = ExtResource( 4 )
+texture_scale = 0.5
+range_z_min = -128
+range_z_max = 128
